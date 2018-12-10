@@ -23,7 +23,6 @@ window.onload = function() {
 
   createCookie('updater','nope',1);
 
-
   function createCookie(name,value,day){
     keyValue = name + "=" + value;
 
@@ -32,13 +31,9 @@ window.onload = function() {
 
     var expiry = "expires=" + now.toUTCString();
  
-
     var cookieString = keyValue + ";" + expiry;
     document.cookie = cookieString;
   };
-
-  
-
 
 
 };

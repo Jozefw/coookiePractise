@@ -1,11 +1,16 @@
 window.onload = function() {
 
+   document.getElementById('logout').addEventListener('click',function(){
+    createCookie('logedIn',true, -1 );
+    createCookie('LogInUsername',getCookieValue('LogInUsername'),-1);
+    createCookie('visits', visits, -1);
+    window.location = 'index.html';
+    });
+
     if(getCookieValue('logedIn')){
-     
         document.getElementById('login').style.display="none";
         document.getElementById('logout').style.display="inline-block";
         document.getElementById('user').innerHTML = getCookieValue('LogInUsername');
-
 
         createCookie('logedIn',true, 2 );
         createCookie('LogInUsername',getCookieValue('LogInUsername'),2);
@@ -15,7 +20,6 @@ window.onload = function() {
         createCookie('visits', visits, 2);
 
     }else{
-        console.log('Hello Guest');
         document.getElementById('login').style.display="inline-bock";
         document.getElementById('logout').style.display="none";
         document.getElementById('user').innerHTML = "Guest !";
