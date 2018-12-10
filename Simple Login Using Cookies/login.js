@@ -1,5 +1,3 @@
-
-
 window.onload = function() {
 
   var username = 'Jericho';
@@ -23,17 +21,20 @@ window.onload = function() {
     }
   });
 
-  function createCookie(name,value){
+  createCookie('updater','nope',1);
+
+
+  function createCookie(name,value,day){
     keyValue = name + "=" + value;
 
     var now = new Date();
-    now.setTime(now.getTime()+ 24 * 60 * 60 + 1000);
+    now.setTime(now.getTime() + day * 24 * 60 * 60 * 1000);
+
     var expiry = "expires=" + now.toUTCString();
-    console.log(expiry);
+ 
 
     var cookieString = keyValue + ";" + expiry;
     document.cookie = cookieString;
-    console.log(document.cookie);
   };
 
   
